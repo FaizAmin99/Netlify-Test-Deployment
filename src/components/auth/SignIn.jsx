@@ -20,7 +20,8 @@ const SignIn = () => {
   return (
     <div className="sign-in-container">
       <form onSubmit={signIn}>
-        <h1>Log In to your Account</h1>
+      <h1>DymaxTech</h1>
+        <h3>LOG IN:</h3>
         <input
           type="email"
           placeholder="Enter your email"
