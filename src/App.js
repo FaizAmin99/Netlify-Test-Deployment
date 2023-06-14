@@ -24,7 +24,7 @@ function App() {
 <Router>
       <Routes>
           <Route exact path="/" element={<><SignIn/><SignUp/><AuthDetails/></>}/>
-          <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/dashboard" element={<Dashboard authorized={false}/>} />
           <Route exact path="*" element={<ErrorPage />} />
       </Routes>
 </Router>

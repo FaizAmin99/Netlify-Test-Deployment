@@ -46,7 +46,7 @@ let navigate=useNavigate();
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
-        <button onClick={() => navigate("/dashboard")} type="submit">Log In</button>\
+        <button onClick={() => navigate("/dashboard")} type="submit">Log In</button>
         </form>
     </div>
   );
