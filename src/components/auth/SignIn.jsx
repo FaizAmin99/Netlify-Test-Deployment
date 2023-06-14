@@ -1,27 +1,39 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../../firebase";
+import {useNavigate} from "react-router-dom"
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+
+let navigate=useNavigate();
+
+  //Login/Signin component
   const signIn = (e) => {
     e.preventDefault();
+
+
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        //If login successfull
         console.log(userCredential);
       })
       .catch((error) => {
         console.log(error);
       });
-  };
 
+      //const navigate = useNavigate();
+      
+      };
+
+
+  //Render =  Return the elements
   return (
     <div className="sign-in-container">
       <form onSubmit={signIn}>
-      <h1>DymaxTech</h1>
-        <h3>LOG IN:</h3>
+        <h1>LOG IN</h1>
         <input
           type="email"
           placeholder="Enter your email"
@@ -34,8 +46,8 @@ const SignIn = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
-        <button type="submit">Log In</button>
-      </form>
+        <button onClick={() => navigate("/dashboard")} type="submit">Log In</button>\
+        </form>
     </div>
   );
 };

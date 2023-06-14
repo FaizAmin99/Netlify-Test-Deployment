@@ -17,10 +17,12 @@ const SignUp = () => {
       });
   };
 
+  
+//Render =  Return the elements
   return (
     <div className="sign-in-container">
       <form onSubmit={signUp}>
-        <h3>SIGN UP</h3>
+        <h1>SIGNUP</h1>
         <input
           type="email"
           placeholder="Enter your email"
